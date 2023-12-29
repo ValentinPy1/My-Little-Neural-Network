@@ -1,67 +1,69 @@
-# Hands-On Workshop: Building a Neural Network for MNIST with Keras and TensorFlow
+# Neural Network Workshop
 
-## Overview
-
-This workshop is a practical, code-along session where you will build a neural network to recognize handwritten digits using the MNIST dataset. Each exercise is designed to introduce you to different aspects of neural network development using Keras and TensorFlow, culminating in a fully functional model by the end of the workshop.
+This guide will lead you through the process of building a convolutional neural network using TensorFlow and Keras. You'll learn how to load data, construct a model, train it, and make predictions on the famous MNIST dataset. For validation of this workshop you'll need to have a 95% accuracy submission on the digit recognizer competion : https://www.kaggle.com/competitions/digit-recognizer
 
 ## Prerequisites
 
-- Basic Python programming knowledge.
-- TensorFlow and Keras installed on your machine.
+Before diving into the practical steps, ensure you understand the basics of CNNs and the problem you're solving. Familiarize yourself with the concepts of convolutional layers, pooling, flattening, dense layers, and the softmax function.
 
-## Installation
+## Step 1: Environment Setup
 
-Ensure Python, TensorFlow, and Keras are installed:
-- Python: [Download Python](https://www.python.org/downloads/)
-- TensorFlow: Run `pip install tensorflow`
-- Keras: Run `pip install keras`
+Install TensorFlow and Keras. (And Jupyter Notebook vscode extension if you are a good person)
 
-## Workshop Exercises
+* Install Jupyter Notebook extension on your vscode
+* Install Pandas, TensorFlow and Keras.
+* Make a .ipynb file (notebook file)
+* Test the installation by importing TF and Keras in your notebook and running the cell.
 
-### Exercise 1: Setup and Data Loading (Duration: 20 minutes)
-- Import TensorFlow and Keras.
-- Load the MNIST dataset using Keras (`keras.datasets.mnist.load_data()`).
-- Explore the dataset: print shapes and visualize some digits.
+## Step 2: Data Loading and Preprocessing
 
-### Exercise 2: Preprocessing the Data (Duration: 30 minutes)
-- Normalize the data for model training.
-- Flatten the images for input into a neural network.
-- Convert labels to categorical (one-hot encoding).
+First go check up https://www.kaggle.com/competitions/digit-recognizer/data
 
-### Exercise 3: Building the Neural Network (Duration: 40 minutes)
-- Create a Sequential model in Keras.
-- Add a Dense layer with appropriate input shape and activation function.
-- Add more layers, experimenting with different numbers of neurons.
+* Download the train and test dataset
+* Use pandas to load the train data from the just downloaded CSV file.
+* Try to extract the label column from your data it's what you are trying to predict.
+* Try to find out the shape of your data.
 
-### Exercise 4: Compiling the Model (Duration: 20 minutes)
-- Compile the model with an optimizer, loss function, and metrics.
-- Discuss the role of each component in model training.
+Bonus
 
-### Exercise 5: Training the Model (Duration: 40 minutes)
-- Train the model using the MNIST training data.
-- Discuss parameters like batch size and number of epochs.
-- Observe the training process and discuss overfitting.
+* Split your data into training and validation sets.
 
-### Exercise 6: Evaluating and Improving the Model (Duration: 30 minutes)
-- Evaluate the model on test data.
-- Discuss common techniques to improve model performance.
+## Step 3: Model Building
 
-### Exercise 7: Saving and Loading the Model (Duration: 20 minutes)
-- Save the trained model.
-- Load the model and make predictions on test data.
+Construct a Sequential model with Keras with many cool layers. (Take a look at https://keras.io/api/)
 
-## Workshop Conclusion
+* Initialize a Sequential model.
+* Add layers (dense layers with relu should be a good start)
+* Compile the model with an appropriate optimizer, loss function, and metrics.
 
-- Recap of the steps taken to build and train the neural network.
-- Open floor for questions and troubleshooting.
+Bonus
 
-## Resources
+* Search about Convolutional layers, maxpooling and dropout
 
-- [Keras Documentation](https://keras.io/)
-- [TensorFlow Documentation](https://www.tensorflow.org/)
+## Step 4: Training
 
-## Contact Information
+Train the model using your training data.
 
-For any assistance, please reach out to:
-- Email: workshop@example.com
-- Phone: +123456789
+* Train the model using `model.fit`.
+
+Bonus
+
+* Experiment with different batch sizes and epochs.
+* Experiment with other layers, optimizers and
+
+## Step 5: Predictions
+
+Evaluate the model's performance and save it to disk.
+
+* Load the test dataset (It should have no label column)
+* Preprocess it as you did with the training data.
+* Use the model to make predictions on the test data. (take a look at np.argmax)
+* Save the prediction to a file (take a look at the expected format https://www.kaggle.com/competitions/digit-recognizer/data)
+
+## Step 6: Submission
+
+https://www.kaggle.com/competitions/digit-recognizer/submissions
+
+* Go to the kaggle submission page and load the predictions file you produced
+* If you have a red cross you made a mistake with the format
+* Else you can go check your ranking and send your resume at openai.
