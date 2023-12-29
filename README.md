@@ -1,10 +1,16 @@
 # Neural Network Workshop
 
-This guide will lead you through the process of building a convolutional neural network using TensorFlow and Keras. You'll learn how to load data, construct a model, train it, and make predictions on the famous MNIST dataset. For validation of this workshop you'll need to have a 95% accuracy submission on the digit recognizer competion : https://www.kaggle.com/competitions/digit-recognizer
+This guide will lead you through the process of building a neural network using TensorFlow and Keras. You'll learn how to load data, construct a model, train it, and make predictions on the famous MNIST dataset.
 
-## Prerequisites
+## Objectives
 
-Before diving into the practical steps, ensure you understand the basics of CNNs and the problem you're solving. Familiarize yourself with the concepts of convolutional layers, pooling, flattening, dense layers, and the softmax function.
+For validation of this workshop you'll need to have a 95% accuracy submission on the digit recognizer competion.
+
+ https://www.kaggle.com/competitions/digit-recognizer
+
+Take a look at it.
+
+Before diving into the practical steps, ensure tha you understand the basics what a neural network is and the problem you're solving.
 
 ## Step 1: Environment Setup
 
